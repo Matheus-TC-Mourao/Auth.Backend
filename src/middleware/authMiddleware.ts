@@ -1,9 +1,12 @@
 import { NextFunction, Request, Response } from "express";
 import jwt from "jsonwebtoken";
+import db from "../db/db";
 
-
-export const authMiddleware = async (req: Request, res: Response, next: NextFunction) => {
-
+export const authMiddleware = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   if (!process.env.JWT_SECRET) {
     throw new Error("JWT_SECRET variable is not defined in the environment!");
   }
@@ -26,14 +29,15 @@ export const authMiddleware = async (req: Request, res: Response, next: NextFunc
     return;
   }
 
-   jwt.verify(token, JWT_SECRET, (error)=>{
+  jwt.verify(token, JWT_SECRET, (error) => {
     if (error) {
-      return res.status(401).json({
-        statusCode:401,
-        message:"User unauthorized", error
-      })
+      res.status(401).json({
+        statusCode: 401,
+        message: "User unauthorized",
+        error,
+      });
     }
-   });
+  });
 
   next();
 };

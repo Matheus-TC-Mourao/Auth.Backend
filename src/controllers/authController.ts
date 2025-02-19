@@ -38,11 +38,11 @@ const login = async (req: Request, res: Response) => {
         { name: user.name, email: user.email },
         JWT_SECRET,
         {
-          expiresIn: 2 * 60,
+          expiresIn: 5 * 60,
         }
       );
 
-      return res.status(200).json({
+      res.status(200).json({
         statusCode: 200,
         message: "Login Successfully",
         data: { token },

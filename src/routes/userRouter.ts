@@ -11,6 +11,6 @@ routes.post("/register", controller.register);
 
 routes.use(authMiddleware);
 
-routes.post("/authRoute", controller.authenticatedRoute);
+routes.get("/dashboard", controller.authenticatedRoute);
 
 export default routes;

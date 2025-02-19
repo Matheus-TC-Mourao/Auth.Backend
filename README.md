@@ -29,7 +29,7 @@ src/
 
 ### Rota Privada
 
-- **GET /authRoute**
+- **GET /dashboard**
   Rota protegida que requer a presença de um token JWT válido no header da requisição (via `Authorization: Bearer <token>`). Utiliza um middleware para verificar a validade do token antes de permitir o acesso.
 
 ## Tecnologias Utilizadas
@@ -123,7 +123,7 @@ A API estará disponível em `http://localhost:3300`.
 - **Acesso à Rota Privada (GET /authRoute):**
 
   ```http
-  GET http://localhost:3000/authRoute
+  GET http://localhost:3000/dashboard
   Authorization: Bearer <seu_token_jwt>
   ```
 
