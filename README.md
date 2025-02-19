@@ -1,6 +1,6 @@
 # Projeto de Autenticação em Node.js com MongoDB, Express e JWT
 
-Este projeto é uma API construída em Node.js utilizando Express, MongoDB e JWT para autenticação. Ele possui três rotas públicas e uma rota privada que requer autenticação.
+Esta API foi desenvolvida para fornecer um sistema de autenticação e gerenciamento de usuários, construída em Node.js utilizando Express, MongoDB e JWT para autenticação. Ela oferece uma estrutura escalável e de fácil manutenção.
 
 ## Estrutura de Pastas
 
